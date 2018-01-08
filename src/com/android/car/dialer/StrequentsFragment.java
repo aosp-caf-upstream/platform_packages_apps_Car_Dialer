@@ -27,8 +27,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.car.widget.DayNightStyle;
-import android.support.car.widget.PagedListView;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -39,6 +37,9 @@ import android.widget.LinearLayout;
 
 import com.android.car.dialer.telecom.PhoneLoader;
 import com.android.car.dialer.telecom.UiCallManager;
+
+import androidx.car.widget.DayNightStyle;
+import androidx.car.widget.PagedListView;
 
 /**
  * Contains a list of contacts. The call types can be any of the CALL_TYPE_* fields from
@@ -85,7 +86,6 @@ public class StrequentsFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.strequents_fragment, container, false);
         mListView = (PagedListView) view.findViewById(R.id.list_view);
-        mListView.getLayoutManager().setOffsetRows(true);
 
         mSpeedialCursorLoader = PhoneLoader.registerCallObserver(PhoneLoader.CALL_TYPE_SPEED_DIAL,
             mContext, (loader, cursor) -> {
@@ -270,7 +270,7 @@ public class StrequentsFragment extends Fragment {
             Resources res = context.getResources();
             mPaint = new Paint();
             mPaint.setColor(res.getColor(R.color.car_list_divider));
-            mDividerHeight = res.getDimensionPixelSize(R.dimen.car_divider_height);
+            mDividerHeight = res.getDimensionPixelSize(R.dimen.car_list_divider_height);
             mPaintAlpha = mPaint.getAlpha();
         }
 

@@ -15,23 +15,16 @@
  */
 package com.android.car.dialer;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.car.drawer.CarDrawerActivity;
-import android.support.car.drawer.CarDrawerAdapter;
-import android.support.car.drawer.DrawerItemViewHolder;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
 import android.telecom.Call;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
-import android.view.View;
 
 import com.android.car.dialer.telecom.PhoneLoader;
 import com.android.car.dialer.telecom.UiCall;
@@ -39,6 +32,10 @@ import com.android.car.dialer.telecom.UiCallManager;
 import com.android.car.dialer.telecom.UiCallManager.CallListener;
 
 import java.util.List;
+
+import androidx.car.drawer.CarDrawerActivity;
+import androidx.car.drawer.CarDrawerAdapter;
+import androidx.car.drawer.DrawerItemViewHolder;
 
 /**
  * Main activity for the Dialer app. Displays different fragments depending on call and
@@ -549,7 +546,7 @@ public class TelecomActivity extends CarDrawerActivity implements
                 CallLogListingTask task = new CallLogListingTask(TelecomActivity.this, data,
                     (items) -> {
                             getDrawerController().showLoadingProgressBar(false);
-                            getDrawerController().switchToAdapter(
+                            getDrawerController().pushAdapter(
                                     new CallLogAdapter(titleResId, items));
                         });
                 task.execute();
