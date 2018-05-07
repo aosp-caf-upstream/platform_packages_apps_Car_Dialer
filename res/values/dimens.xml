@@ -32,10 +32,11 @@
     <dimen name="in_call_large_contact_photo_size">480dp</dimen>
     <dimen name="in_call_content_card_margin_start">@dimen/car_keyline_1</dimen>
     <dimen name="avatar_rounded_radius">60dp</dimen>
-    <dimen name="in_call_small_contact_photo_size">120dp</dimen>
+    <dimen name="in_call_small_contact_photo_size">@dimen/car_touch_target_size</dimen>
     <dimen name="in_call_toggle_button_image_offset">30dp</dimen>
     <dimen name="in_call_info_margin_top">72dp</dimen>
     <dimen name="in_call_card_elevation">12dp</dimen>
+    <dimen name="in_call_card_height">200dp</dimen>
 
     <!-- This should be -1 * in_call_card_right_margin -->
     <dimen name="in_call_card_dialpad_translation_x">-308dp</dimen>
@@ -63,6 +64,7 @@
     <dimen name="call_log_icon_margin">4dp</dimen>
     <dimen name="call_log_item_height">91dp</dimen>
     <dimen name="call_log_icon_size">@dimen/car_primary_icon_size</dimen>
+    <dimen name="car_card_view_corner_radius">2dp</dimen>
 
     <dimen name="icon_container_height">@dimen/car_primary_icon_size</dimen>
 
@@ -80,4 +82,19 @@
 
     <!-- The height of each of the cards that list the contact search results. -->
     <dimen name="contact_result_card_height">128dp</dimen>
+
+    <dimen name="call_log_last_card_bottom_margin">@dimen/call_log_card_overlap</dimen>
+
+    <dimen name="line_divider_height">1dp</dimen>
+
+    <dimen name="dialer_number_view_height">128dp</dimen>
+    <dimen name="dialer_number_view_padding">32dp</dimen>
+
+    <dimen name="call_fab_elevation">8dp</dimen>
+    <dimen name="bksp_button_width">@dimen/car_touch_target_size</dimen>
+    <!-- Fab button size is touch target (76dp) + stroke width (8dp) * 2-->
+    <dimen name="fab_button_size">92dp</dimen>
+
+    <dimen name="in_call_button_size">@dimen/car_touch_target_size</dimen>
+
 </resources>
